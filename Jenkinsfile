@@ -23,8 +23,7 @@ pipeline {
          steps {
             sh(script: """
                docker-compose ps -a
-               
-            """)
+               )
          }
          post {
             success {
