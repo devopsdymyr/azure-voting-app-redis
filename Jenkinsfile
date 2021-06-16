@@ -19,6 +19,21 @@ pipeline {
             """)
          }
       }
-      
+      stage('Start test app') {
+         steps {
+            sh(script: """
+               docker-compose pa -a
+               
+            """)
+         }
+         post {
+            success {
+               echo "App started successfully :)"
+            }
+            failure {
+               echo "App failed to start :("
+            }
+         }
+      }
    }
 }
