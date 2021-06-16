@@ -22,7 +22,7 @@ pipeline {
       stage('Start test app') {
          steps {
             sh(script: """
-               docker-compose pa -a
+               docker-compose ps -a
                
             """)
          }
